@@ -13,10 +13,12 @@ ID 1.template changed to myFirstApp
 Extra empty rows deleted
 Dunctions seperators added
 */
+var appMain;
 
 (function(APP, $, undefined) {
     
     // App configuration
+    appMain = APP;
     APP.config = {};
     APP.config.app_id = 'myFirstApp';
     APP.config.app_url = '/bazaar?start=' + APP.config.app_id + '?' + location.search.substr(1);
@@ -82,6 +84,45 @@ Dunctions seperators added
 
 // Page onload event handler
 $(function() {
+    // Start application
+    APP.startApp();
+});
+//-----------------------------------------------------------------------------
+function is_hidden(item) {
+    var hidden = false;
+    try {
+        if (item) {
+            hidden = item.style.display == "none";
+        }
+    }
+    catch (err) {
+        console.log
+        hidden = true;
+    }
+    return (hidden);
+}
+//-----------------------------------------------------------------------------
+function toggleLedState () {
+    if (APP.led_state == true) {
+        $('#led_on').hide();
+        $('#led_off').show();
+        APP.led_state = false;
+    }
+    else {
+        $('#led_off').hide();
+        $('#led_on').show();
+        APP.led_state = true;
+    }
+    var local = {};
+    local['LED_STATE'] = { value: APP.led_state };
+    APP.ws.send(JSON.stringify({ parameters: local }));
+}
+//-----------------------------------------------------------------------------
+$(function() {
+    // Click
+    $('#btnToggleLed').click(function() {
+        toggleLedState ();
+    });
     // Start application
     APP.startApp();
 });

@@ -7,12 +7,8 @@
 #include <sys/sysinfo.h>
 
 #include "main.h"
-
-
-
-
-
-
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 const char *rp_app_desc(void)
 {
     return (const char *)"Template application.\n";
@@ -51,19 +47,31 @@ int rp_get_signals(float ***s, int *sig_num, int *sig_len)
 }
 
 
-
-
-
-
-
-
 void UpdateSignals(void){}
 
 
 void UpdateParams(void){}
 
+CBooleanParameter ledState("LED_STATE", CBaseParameter::RW, false, 0);
 
-void OnNewParams(void) {}
+void print_debug(const char *sz)
+{
+	FILE *file = fopen ("/root/omer.debug", "w+");
+	fprintf (file, "%s\n");
+	fclose (file);
+}
+
+void OnNewParams(void) {
+	ledState.Update();
+	print_debug("led state updated"\n");
+//	printf("led state updated"\n");
+	if (ledState.Value()) {
+		rp_DpinSetState(RP_LED0, RP_HIGH);
+	}
+	else {
+		rp_DpinSetState(RP_LED0, RP_LOW);
+	}
+}
 
 
 void OnNewSignals(void){}

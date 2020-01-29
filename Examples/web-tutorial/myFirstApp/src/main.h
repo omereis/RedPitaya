@@ -1,7 +1,6 @@
 #pragma once
 
-
-
+#include <CustomParameters.h>
 
 #ifdef __cplusplus
 extern "C" {
