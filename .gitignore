@@ -23,5 +23,7 @@
 *.i*86
 *.x86_64
 *.hex
+*.csv
+fast_ai
 # backups
 *~
