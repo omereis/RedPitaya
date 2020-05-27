@@ -11,7 +11,9 @@
 
     // Parameters
     APP.processing = false;
-//-----------------------------------------------------------------------------
+
+
+
     // Starts template application on server
     APP.startApp = function() {
 
@@ -30,10 +32,12 @@
             .fail(function() {
                 console.log('Could not start the application (ERR3)');
                 APP.startApp();
-            }
-        );
+            });
     };
-//-----------------------------------------------------------------------------
+
+
+
+
     APP.connectWebSocket = function() {
 
         //Create WebSocket
@@ -46,7 +50,8 @@
         } else {
             console.log('Browser does not support WebSocket');
         }
-//-----------------------------------------------------------------------------
+
+
         // Define WebSocket event listeners
         if (APP.ws) {
 
@@ -100,7 +105,10 @@
             };
         }
     };
-//-----------------------------------------------------------------------------
+
+
+
+
     //Read value
     APP.readValue = function() {
 
@@ -108,7 +116,10 @@
         local['READ_VALUE'] = { value: true };
         APP.ws.send(JSON.stringify({ parameters: local }));
     };
-//-----------------------------------------------------------------------------
+
+
+
+
     // Processes newly received data for signals
     APP.processSignals = function(new_signals) {
 

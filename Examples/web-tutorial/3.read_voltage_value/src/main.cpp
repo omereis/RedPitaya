@@ -9,26 +9,38 @@
 
 #include "main.h"
 
+
+
+
 //Signal size
 #define SIGNAL_SIZE_DEFAULT      1
+
 
 //Signal
 CFloatSignal VOLTAGE("VOLTAGE", SIGNAL_SIZE_DEFAULT, 0.0f);
 
+
 //Parameter
 CBooleanParameter READ_VALUE("READ_VALUE", CBaseParameter::RW, false, 0);
+
+
+
+
+
 
 const char *rp_app_desc(void)
 {
     return (const char *)"Red Pitaya read voltage.\n";
 }
 
+
 int rp_app_init(void)
 {
     fprintf(stderr, "Loading read voltage application\n");
 
     // Initialization of API
-    if (rpApp_Init() != RP_OK) {
+    if (rpApp_Init() != RP_OK) 
+    {
         fprintf(stderr, "Red Pitaya API init failed!\n");
         return EXIT_FAILURE;
     }
@@ -36,6 +48,7 @@ int rp_app_init(void)
 
     return 0;
 }
+
 
 int rp_app_exit(void)
 {
@@ -83,18 +96,12 @@ void OnNewParams(void)
 
     if (READ_VALUE.Value() == true)
     {
-		FILE *file = fopen ("/tmp/rp_debug.txt", "w+");
-		fprintf (file, "OnNewParams called\n");
-		fclose (file);
-
         float val;
-		static int n = 1;
     
         //Read data from pin
         rp_AIpinGetValue(0, &val);
 
         //Write data to signal
-		val = (float) n++;
         VOLTAGE[0] = val;
 
         //Reset READ value

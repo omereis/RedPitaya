@@ -18,8 +18,7 @@ VERSION ?= 0.00-0000
 REVISION ?= devbuild
 
 # List of compiled object files (not yet linked to executable)
-OBJS = acquire.o fast_ai.o
-#OBJS = fpga_osc.o main_osc.o worker.o acquire.o fast_ai.o
+OBJS = fpga_osc.o main_osc.o worker.o acquire.o
 # List of raw source files (all object files, renamed from .o to .c)
 SRCS = $(subst .o,.c, $(OBJS)))
 
@@ -29,7 +28,6 @@ TARGET=acquire
 # GCC compiling & linking flags
 CFLAGS  = -g -std=gnu99 -Wall -Werror
 CFLAGS += -I../../api/include
-CFLAGS += -I/opt/redpitaya/include
 CFLAGS += -DVERSION=$(VERSION) -DREVISION=$(REVISION)
 
 # Additional libraries which needs to be dynamically linked to the executable

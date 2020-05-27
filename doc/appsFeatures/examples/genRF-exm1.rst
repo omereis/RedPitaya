@@ -6,14 +6,13 @@ Generate continuous signal
 Description
 ***********
 
-This example shows how to program Red Pitaya to generate analog 2kHz sine wave signal with 1V amplitude. Red Pitaya is
-able to generate signals in range from DC to 50 MHz with output voltage range from -1 to 1 Volt. Generated signal can 
-be observed by an Oscilloscope.
+This example shows how to program Red Pitaya to generate analog 2kHz sine wave signal with 1V amplitude. Voltage and frequency ranges depends on Red Pitaya model.
+
 
 Required hardware
 *****************
 
-    - Red Pitaya
+    - Red Pitaya device
 
 .. image:: output_y49qDi.gif
 
@@ -115,4 +114,4 @@ Code - LabVIEW
 
 .. image:: Generate-continuous-signal_LV.png
 
-`Download <https://dl.dropboxusercontent.com/sh/6g8608y9do7s0ly/AAD02Lsn5aXV7kRFFfaPi6eOa/Generate%20continuous%20signal.vi>`_
+`Download <http://downloads.redpitaya.com/downloads/labview/Generate%20continuous%20signal.vi>`_

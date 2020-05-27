@@ -14,11 +14,15 @@ The next procedure will create a clean SD card.
 
 STEMlab 125-14 & STEMlab 125-10
    - `Latest Stable <http://downloads.redpitaya.com/downloads/STEMlab-125-1x/STEMlab_125-xx_OS_0.98-696_stable.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG.md>`_
-   - `Latest Beta <http://downloads.redpitaya.com/downloads/STEMlab-125-1x/STEMlab_125-xx_OS_0.99-41_beta.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG.md>`_
+   - `Latest Beta <http://downloads.redpitaya.com/downloads/STEMlab-125-1x/STEMlab_125-xx_OS_0.99-48_beta.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG.md>`_
 
-STEMlab 122-16 SDR
+SDRlab 122-16 SDR
    - `Latest Stable <http://downloads.redpitaya.com/downloads/STEMlab-122-16/STEMlab_122-16_OS_0.98-5_stable.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG_Z20.md>`_
    - `Latest Beta <http://downloads.redpitaya.com/downloads/STEMlab-122-16/STEMlab_122-16_OS_0.99-43_beta.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG_Z20.md>`_
+
+SIGNALlab 250-12
+   - `Latest Stable <http://downloads.redpitaya.com/downloads/STEMlab-250-12/SIGNALlab_250-12_OS_1.00-26_stable.img.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG_Z20_250_12.md>`_
+   - `Latest Beta <http://downloads.redpitaya.com/downloads/STEMlab-250-12/SIGNALlab_250-12_OS_1.00-26_beta.img.zip>`_  - `CHANGELOG <https://github.com/RedPitaya/RedPitaya/blob/master/CHANGELOG_Z20_250_12.md>`_
 
 ..    - `Beta (including STEMlab SDR transceiver app) <http://downloads.redpitaya.com/downloads/redpitaya_ubuntu_15-44-45_21-jul-2017.img.zip>`_.
 
@@ -162,35 +166,39 @@ Using ApplePi-Baker
 
    .. image:: SDcard_insert.jpg
 
-#. Download `ApplePi-Baker <http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/>`_ and extract it.
+#. Download `ApplePi-Baker <https://www.tweaking4all.com/hardware/raspberry-pi/applepi-baker-v2/>`_. Direct link:
 
-   .. image:: SDcard_macOS_ApplePi-Baker.png
+   - `ApplePi-Baker-v2.2.3.dmg <https://www.tweaking4all.com/downloads/raspberrypi/ApplePi-Baker-v2.2.3.dmg>`_
+   - `ApplePi-Baker-1.9.9.dmg <https://www.tweaking4all.com/downloads/raspberrypi/ApplePi-Baker-1.9.9.dmg>`_
 
-#. Press **crtl** key and click on *ApplePi-Baker* icon, then click *Open* in order to run it.
+#. Click on *ApplePi-Baker* icon, then click *Open* in order to run it.
 
    .. image:: SDcard_macOS_open.png
+
+#. Drag and drop *ApplePi-Baker* for install it.
+
+   .. image:: SDcard_macOS_install.png
 
 #. Enter your admin password and click OK.
 
    .. image:: SDcard_macOS_password.png
 
-#. Select SD card drive. This can be recognized by the size of the card that is 4GB.
+  
+#. Select SD card drive. This can be recognized by the size of the card that is 8GB.
 
    .. image:: SDcard_macOS_ApplePi-Baker_drive.png
+
 
 #. Select Red Pitaya OS image file.
 
    .. image:: SDcard_macOS_ApplePi-Baker_image.png
 
-#. Click "Restore Backup" button in order to write image to SD card.
-
-   .. image:: SDcard_macOS_ApplePi-Baker_restore.png
 
 #. It's coffee time, application will show you Estimated Time for Accomplishment.
 
    .. image:: SDcard_macOS_ApplePi-Baker_wait.png
 
-#. When operation is completed click "OK" and quit ApplePi-Baker.
+#. When operation is completed you can see status Idle.
 
    .. image:: SDcard_macOS_ApplePi-Baker_quit.png
 
@@ -325,3 +333,32 @@ If you wish to keep wireless settings skip deleting the next files:
 
 * ``wpa_supplicant.conf``
 * ``hostapd.conf``
+
+
+******************
+Resize file system
+******************
+
+When recording an image to a flash card of any size, we get sections of the file system 4 GB in size.
+In order to increase the available free space you need to execute the script:
+
+      .. code-block:: shell-session
+
+          root@rp-f03dee:~# /opt/redpitaya/sbin/resize.sh
+
+After the script is completed, the system will ask you to restart Red Pitaya.
+If everything is done correctly, start the system with an increased size of space. This can be checked with the command:
+
+      .. code-block:: shell-session
+
+          root@rp-f03dee:~# df -h
+
+
+.. note::
+
+   If the file system size has not changed, you can try to manually run the command:
+
+      .. code-block:: shell-session
+
+         root@rp-f03dee:~# sudo resize2fs /dev/mmcblk0p2
+

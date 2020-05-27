@@ -13,7 +13,7 @@ that can be set by MATLAB® slider bar.
 Required hardware
 *****************
 
-    - Red Pitaya
+    - Red Pitaya device
 
 .. image:: RP-circuit-e1421258707736-300x212.png
 
@@ -125,4 +125,4 @@ Code - LabVIEW
 
 .. image:: Interactive-LED-bar-graph_LV.png
 
-`Download <https://dl.dropboxusercontent.com/sh/6g8608y9do7s0ly/AAAmHVIgezO9MqIpHrxZgJdDa/Interactive%20LED%20bar%20graph.vi>`_
+`Download <http://downloads.redpitaya.com/downloads/labview/Interactive%20LED%20bar%20graph.vi>`_

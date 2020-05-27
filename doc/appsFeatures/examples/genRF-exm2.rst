@@ -13,7 +13,7 @@ ramp down or pwm. Generated signal can be observed by an Oscilloscope.
 Required hardware
 *****************
 
-    - Red Pitaya
+    - Red Pitaya device
 
 .. image:: output_y49qDi.gif
 
@@ -126,4 +126,4 @@ Code - LabVIEW
 
 .. image:: Generate-signal-pulses_LV.png
 
-`Downloads <https://dl.dropboxusercontent.com/sh/6g8608y9do7s0ly/AACurlCDsGcxHemxedH453Sra/Generate%20signal%20pulses.vi>`_
+`Downloads <http://downloads.redpitaya.com/downloads/labview/Generate%20signal%20pulses.vi>`_

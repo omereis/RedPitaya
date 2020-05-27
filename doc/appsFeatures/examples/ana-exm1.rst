@@ -12,9 +12,10 @@ inputs on Red Pitaya are rated from 0-3.3 Volts.
 Required hardware
 *****************
 
-    - Red Pitaya
+    - Red Pitaya device
     - R1 10K potentiometer
 
+Wiring example for STEMlab 125-14 & STEMlab 125-10:
 .. image:: Read_analog_voltage_on_Red_Pitaya_analog_input.png
 
 Circuit
@@ -184,4 +185,4 @@ Code - LabVIEW
 
 .. image:: Read-analog-voltage-on-slow-analog-input_LV.png
 
-`Download <https://dl.dropboxusercontent.com/sh/6g8608y9do7s0ly/AAAi01EnApzCSEEGr3ksQz3ra/Read%20analog%20voltage%20on%20slow%20analog%20input.vi>`_
+`Download <http://downloads.redpitaya.com/downloads/labview/Read%20analog%20voltage%20on%20slow%20analog%20input.vi>`_

@@ -63,7 +63,7 @@ float t_params[PARAMS_NUM] = { 0, 1e6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 /** Decimation translation table */
 static int g_dec[DEC_MAX] = { 1,  8,  64,  1024,  8192,  65536 };
 
-/*****************************************************************************/
+
 /** Print usage information */
 void usage() {
 
@@ -90,7 +90,7 @@ void usage() {
              g_dec[4],
              g_dec[5]);
 }
-/*****************************************************************************/
+
 /** Gain string (lv/hv) to number (0/1) transformation */
 int get_gain(int *gain, const char *str)
 {
@@ -107,7 +107,7 @@ int get_gain(int *gain, const char *str)
     return -1;
 }
 
-/*****************************************************************************/
+
 /** Acquire utility main */
 int main(int argc, char *argv[])
 {

@@ -2,9 +2,9 @@
 Streaming
 #######################
 
-Streaming application enables user to stream data from STEMlab to :
+Streaming application enables user to stream data from Red Pitaya to :
 
-    * Local file stored on STEMlab SD card
+    * Local file stored on Red Pitaya SD card
     * Over ethernet to remote computer using UDP or TCP protocol
 
 User is able to set:
@@ -25,10 +25,10 @@ Max. streaming speeds are limited to:
 
 
 **********************************************
-Start using STEMlab streaming feature
+Start using Red Pitaya streaming feature
 **********************************************
 
-#. ) Run streaming app from STEMlab WEB interface
+#. ) Run streaming app from Red Pitaya WEB interface
 
     .. image:: img/redpitaya_main_page.png
 
@@ -84,7 +84,13 @@ Start using STEMlab streaming feature
         .. image:: img/audacity.png
            :width: 80%
 
+.. note::
 
-    Notice: streaming always creates two files:
+    Streaming always creates two files:
         * first stores streamed data
         * second data transfer report
+
+.. note::
+
+    Streaming app source are available here: `streaming app <https://github.com/RedPitaya/RedPitaya/tree/master/apps-tools/streaming_manager>`__.
+        

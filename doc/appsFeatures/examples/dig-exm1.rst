@@ -16,7 +16,7 @@ This example shows how to control one of the Red Pitaya on board LEDs and make i
 Required hardware
 *****************
 
-    - Red Pitaya
+    - Red Pitaya device
 
 .. image:: output_y49qDi.gif
 
@@ -53,7 +53,7 @@ MATLAB editor, save project and press run.
     %% Close connection with Red Pitaya
 
     fclose(tcpipObj);
-    view rawdigital_led_blink.m
+
     
 ********
 Code - C
@@ -162,5 +162,5 @@ Code - LabVIEW
 .. image:: Blink_LV.png
 
 
-`Download <https://dl.dropboxusercontent.com/sh/6g8608y9do7s0ly/AADgLWRiGX0c9hspBO3-oyd0a/Blink.vi>`_
+`Download <http://downloads.redpitaya.com/downloads/labview/Blink.vi>`_
 
